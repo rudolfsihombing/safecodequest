@@ -1,0 +1,20 @@
+.navbar .nav-link-hover {
+    transition: color 0.3s ease-in-out, border 0.3s ease-in-out; /* Efek transisi warna dan border selama 0.3 detik dengan efek ease-in-out */
+    border-bottom: 2px solid transparent; /* Awalnya atur border menjadi transparan */
+}
+
+.navbar .nav-link-hover:hover {
+    color: var(--color1); /* Warna yang ingin digunakan saat di-hover */
+    border-bottom-color: var(--color1); /* Warna hitam untuk border saat di-hover */
+}
+
+.active-link {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    background-color: black;
+    color: white;
+}
+
+.active-link:hover {
+    background-color: white;
+}

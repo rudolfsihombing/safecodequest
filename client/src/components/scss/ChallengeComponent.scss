@@ -1,0 +1,10 @@
+.section-challenge {
+    height: 65vh;
+}
+
+/* LevelComponents.scss */
+.transparent-hover:hover {
+    .card {
+      filter: hue-rotate(180deg) opacity(0.7); /* Mengubah tingkat transparansi dan mengubah keabu-abuan */
+    }
+  }

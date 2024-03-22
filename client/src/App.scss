@@ -1,0 +1,13 @@
+:root {
+    --color1 : #041E41;
+    --color2 : #018093;
+    --color3 : #ffd600;
+    --color4 : #F8F0CC;
+}
+
+body {
+    background-image: linear-gradient(to right, #764BA2, #667EEA);
+    margin: 0; /* Menghilangkan margin default dari body */
+}
+
+@import "../node_modules/bootstrap/scss/bootstrap";
