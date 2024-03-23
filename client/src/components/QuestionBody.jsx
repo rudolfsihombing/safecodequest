@@ -2,6 +2,7 @@ import React, {useState} from 'react'
 import { Toast, Button, Modal, Container } from 'react-bootstrap'
 import axios from 'axios'
 import { Parser } from "html-to-react"
+import host from "./Host"
 
 const QuestionBody = ({quest, objektivitas, point, title, user_point, username, exam, task_html}) => {
     // toast controller 
@@ -19,7 +20,7 @@ const QuestionBody = ({quest, objektivitas, point, title, user_point, username, 
     const getHelp = () => {
         axios({
             method: "POST",
-            url: "http://localhost:5000/helpgpt",
+            url: `http://${host}/helpgpt`,
             data: {
                 objektif: exam?.exam_objektivitas,
                 message : exam?.exam_kode_quest

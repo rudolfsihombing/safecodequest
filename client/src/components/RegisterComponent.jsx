@@ -4,6 +4,7 @@ import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
 import { useFormik } from 'formik'
+import host from "./Host"
 
 const RegisterComponent = ({handleClose}) => {
     // Formik handler
@@ -52,7 +53,7 @@ const RegisterComponent = ({handleClose}) => {
         if (!errorsNotEmpty) {
             axios({
                 method: "POST",
-                url: "http://127.0.0.1:5000/signup",
+                url: `http://${host}/signup`,
                 data: {
                     nama: formik.values.nama,
                     username: formik.values.username,

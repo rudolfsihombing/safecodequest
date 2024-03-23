@@ -4,6 +4,7 @@ import './scss/ExamBody.scss'
 import axios from 'axios'
 import { useParams, useNavigate } from 'react-router-dom'
 import Swal from 'sweetalert2';
+import host from "./Host"
 
 // Editor
 import Editor from "@monaco-editor/react"
@@ -29,7 +30,7 @@ const ExamBody = ({token}) => {
     const getExam = () => {
         axios({
             method: "GET",
-            url: `http://127.0.0.1:5000/challenge/${examId}`,
+            url: `http://${host}/challenge/${examId}`,
             headers: {
                 Authorization: 'Bearer ' + token,
             }
@@ -45,7 +46,6 @@ const ExamBody = ({token}) => {
                 exam_kode_type : res.kode_type,
                 exam_task_html : res.task_html
             }))
-            console.log(res)
         }).catch((error) => {
             console.log(error.response)
         })
@@ -59,7 +59,7 @@ const ExamBody = ({token}) => {
     const getUsers = () => {
         axios({
             method: 'GET',
-            url: `http://127.0.0.1:5000/user/${username}`,
+            url: `http://${host}/user/${username}`,
             headers: {
                 Authorization: 'Bearer ' + token,
             }
@@ -103,7 +103,7 @@ const ExamBody = ({token}) => {
 
     // adding point
     const addPoint = () => {
-        axios.put(`http://localhost:5000/userupdate/${username}`, {
+        axios.put(`http://${host}/userupdate/${username}`, {
             point: exam?.exam_point
         })
     }
@@ -112,7 +112,7 @@ const ExamBody = ({token}) => {
     const completed = () => {
         axios({
             method: "POST",
-            url: "http://localhost:5000/addcompletions",
+            url: `http://${host}/addcompletions`,
             data: {
                 username: username,
                 challengeid: examId
@@ -139,7 +139,7 @@ const ExamBody = ({token}) => {
     const checkcompleted = () => {
         axios({
             method: "POST",
-            url: "http://localhost:5000/checkCompletions",
+            url: `http://${host}/checkCompletions`,
             data: {
                 username: username,
                 challengeid: examId
@@ -167,13 +167,12 @@ const ExamBody = ({token}) => {
         const userAnswer = editorRef.current.getValue()
         
         if (!selesai) {
-            console.log(userAnswer)
 
             // Check the answer
             const checkAnswer = () => {
                 axios({
                     method: "POST",
-                    url: "http://localhost:5000/checkgpt",
+                    url: `http://${host}/checkgpt`,
                     data: {
                         objektif: exam?.exam_objektivitas,
                         kunci: exam?.exam_answer,

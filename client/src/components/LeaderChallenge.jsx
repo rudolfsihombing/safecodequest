@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react'
 import axios from 'axios'
+import host from './Host'
 
 const LeaderChallenge = () => {
     // leader fetch
@@ -7,7 +8,7 @@ const LeaderChallenge = () => {
     const getLeaderboard = () => {
         axios({
             method: "GET",
-            url: "http://127.0.0.1:5000/leaderboard",
+            url: `http://${host}/leaderboard`,
         })
         .then((response) => {
             const res = response.data.data

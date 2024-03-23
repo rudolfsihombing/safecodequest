@@ -4,6 +4,7 @@ import User from "../assets/user.svg"
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
 import Swal from 'sweetalert2';
+import host from './Host'
 
 const ModalProfile = ({profile, closeProfile, token, setToken}) => {
     // Profile Data Handler
@@ -20,7 +21,7 @@ const ModalProfile = ({profile, closeProfile, token, setToken}) => {
     const getUsers = () => {
         axios({
             method: 'GET',
-            url: `http://localhost:5000/user/${username}`,
+            url: `http://${host}/user/${username}`,
             headers: {
                 Authorization: 'Bearer ' + token,
             }
@@ -49,7 +50,7 @@ const ModalProfile = ({profile, closeProfile, token, setToken}) => {
     const btnLogout = () => {
         axios({
             method: "POST",
-            url: "http://127.0.0.1:5000/logout",
+            url: `http://${host}/logout`,
         }).then(() => {
             localStorage.removeItem("username")
             localStorage.removeItem("token")

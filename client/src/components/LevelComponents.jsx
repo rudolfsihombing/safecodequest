@@ -3,6 +3,7 @@ import { Carousel, Image, Button } from 'react-bootstrap'
 import './scss/LevelComponents.scss'
 import jefferson from '../assets/onlinesecurity.jpg'
 import { Link } from 'react-router-dom';
+import host from "./Host"
 
 const LevelComponents = ({token, handleShow, notify, exam}) => { 
 

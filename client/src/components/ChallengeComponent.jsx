@@ -2,6 +2,7 @@ import React,  { useState, useEffect }  from 'react'
 import { Link } from 'react-router-dom'
 import toast from 'react-hot-toast'
 import axios from 'axios'
+import host from './Host.jsx'
 import './scss/LevelComponents.scss'
 
 // import bootstrap components
@@ -48,7 +49,7 @@ useEffect(() => {
 const getExam = () => {
     axios({
         method: "GET",
-        url: "http://127.0.0.1:5000/challenge"
+        url: `http://${host}/challenge`
     }).then((response) => {
         const res = response.data.data
         setExam(res)
@@ -65,7 +66,7 @@ const [result, setResult] = useState(false)
 const isCompleted = (username, challengeid) => {
     axios({
         method: 'POST',
-        url: "http://localhost:5000/checkCompletions",
+        url: `http://${host}/checkCompletions`,
         data: {
             username: username,
             challengeid: challengeid

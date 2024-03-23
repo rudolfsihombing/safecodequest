@@ -3,7 +3,7 @@ import {Container, Row} from 'react-bootstrap'
 import Cardleader from '../components/Cardleader'
 import UserLeader from '../components/UserLeader'
 import axios from 'axios'
-
+import host from "./Host"
 
 const LeaderboardBody = () => {
   const [leaderboard, setLeaderboard] = useState(null)
@@ -15,7 +15,7 @@ const LeaderboardBody = () => {
   const getLeaderboard = () => {
     axios({
       method: "GET",
-      url: "http://127.0.0.1:5000/leaderboard",
+      url: `http://${host}/leaderboard`,
     })
     .then((response) => {
       const res = response.data.data

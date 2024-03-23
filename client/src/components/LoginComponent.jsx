@@ -3,6 +3,7 @@ import { Button, Form } from 'react-bootstrap';
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
+import host from "./Host"
 
 const LoginComponent = (props) => {
     // Navigate
@@ -17,7 +18,7 @@ const LoginComponent = (props) => {
     const btnLogin = (event) => {
         axios({
             method: "POST",
-            url: "http://127.0.0.1:5000/login",
+            url: `http://${host}/login`,
             data: {
                 username: loginForm.username,
                 password: loginForm.password
