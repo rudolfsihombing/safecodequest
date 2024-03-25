@@ -46,6 +46,7 @@ const ExamBody = ({token}) => {
                 exam_kode_type : res.kode_type,
                 exam_task_html : res.task_html
             }))
+            console.log(res)
         }).catch((error) => {
             console.log(error.response)
         })
@@ -219,8 +220,6 @@ const ExamBody = ({token}) => {
         }
     }
 
-    const kode_quest = exam?.exam_kode_quest
-
     return (
     <div className='p-5'>
         <Container fluid="md">
@@ -252,8 +251,8 @@ const ExamBody = ({token}) => {
                 <Col className='bg-dark border border-white border-3 g-0 position-relative' style={{ height: '40.4rem', overflowY: 'auto', maxHeight: '40.4rem' }}>
                     <Editor 
                         theme='vs-dark'
-                        defaultLanguage={exam?.exam_kode_type}
-                        defaultValue={kode_quest}
+                        language={exam?.exam_kode_type}
+                        value={exam?.exam_kode_quest}
                         onMount={handleEditorDidMount}
                     />
                     <div className='position-absolute bottom-0 start-50 translate-middle-x mb-3 py-2 d-flex justify-content-end pe-2 transparent-background gap-2' style={{width: '95%'}}> 
