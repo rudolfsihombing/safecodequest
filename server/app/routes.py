@@ -42,7 +42,7 @@ def signup():
     return UserController.signup()
 
 @app.route("/login", methods=['POST'])
-def logins():
+def login():
     return UserController.login()
 
 @app.route("/logout", methods=["POST"])

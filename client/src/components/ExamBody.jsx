@@ -219,6 +219,8 @@ const ExamBody = ({token}) => {
         }
     }
 
+    const kode_quest = exam?.exam_kode_quest
+
     return (
     <div className='p-5'>
         <Container fluid="md">
@@ -251,7 +253,7 @@ const ExamBody = ({token}) => {
                     <Editor 
                         theme='vs-dark'
                         defaultLanguage={exam?.exam_kode_type}
-                        defaultValue={exam?.exam_kode_quest}
+                        defaultValue={kode_quest}
                         onMount={handleEditorDidMount}
                     />
                     <div className='position-absolute bottom-0 start-50 translate-middle-x mb-3 py-2 d-flex justify-content-end pe-2 transparent-background gap-2' style={{width: '95%'}}> 
