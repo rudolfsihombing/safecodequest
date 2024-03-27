@@ -107,12 +107,12 @@ return (
                 {/* Kolom Post test */}
 
                 <Row className='col-lg bg-dark border border-5 border-black text-white g-0 transparent-hover'>
-                    <Link to='#'>
+                    <Link to='https://docs.google.com/forms/d/e/1FAIpQLSfyNSp6ic7JgtlH2iFOeKqhh8NgxLtnVrjKRLOST5sMDWB91A/viewform?usp=sf_link'>
                         <Card className="bg-dark text-white">
                         <Card.Img src={johnyBriggs} alt="Card image" className='img-fluid rounded-0'/>
                         <Card.ImgOverlay>
                             <Card.Title>
-                                <h1>Post Test</h1>
+                                <h1>Pre Test</h1>
                             </Card.Title>
                         </Card.ImgOverlay>
                         </Card>
@@ -122,12 +122,12 @@ return (
                 {/* Kolom Pre test */}
 
                 <Row className='col-lg bg-dark border border-5 border-black text-white g-0 transparent-hover'>
-                    <Link to='#'>
+                    <Link to='https://docs.google.com/forms/d/e/1FAIpQLScwPUOmG2QqtzzFVxuL_8U5Z2Jd8GqQR9JJQGf__onFVE33lA/viewform?usp=sf_link'>
                         <Card className="bg-dark text-white">
                         <Card.Img src={jezTimms} alt="Card image" className='img-fluid rounded-0'/>
                         <Card.ImgOverlay>
                             <Card.Title>
-                                <h1>Pre Test</h1>
+                                <h1>Post Test</h1>
                             </Card.Title>
                         </Card.ImgOverlay>
                         </Card>
