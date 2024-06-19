@@ -2,23 +2,21 @@ import React,  { useState, useEffect }  from 'react'
 import { Link } from 'react-router-dom'
 import toast from 'react-hot-toast'
 import axios from 'axios'
-import host from './Host.jsx'
-import './scss/LevelComponents.scss'
+import host from '../controller/Host.jsx'
+import '../scss/ChallengeComponent.scss'
 
 // import bootstrap components
 import { Container, Row, Col, Card, Offcanvas } from 'react-bootstrap'
 
-// import css
-import './scss/ChallengeComponent.scss'
 
 // import pages
-import LevelComponents from './LevelComponents'
-import LeaderChallenge from './LeaderChallenge'
-import AboutChallenge from './AboutChallenge'
+import LevelComponents from './LevelComponents.jsx'
+import LeaderChallenge from './LeaderChallenge.jsx'
+import AboutChallenge from './AboutChallenge.jsx'
 
 // import image
-import johnyBriggs from '../assets/johnybriggs.jpg'
-import jezTimms from '../assets/jeztimms.jpg'
+import johnyBriggs from '../../assets/johnybriggs.jpg'
+import jezTimms from '../../assets/jeztimms.jpg'
 
 const ChallengeComponent = ({token}) => {
 

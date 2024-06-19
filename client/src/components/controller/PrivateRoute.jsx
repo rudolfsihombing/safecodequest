@@ -1,6 +1,6 @@
 import React from 'react'
-import ExamPages from '../pages/ExamPages'
-import ChallengePages from '../pages/ChallengePages'
+import ExamPages from '../../pages/ExamPages'
+import ChallengePages from '../../pages/ChallengePages'
 
 const PrivateRoute = ({token}) => {
 

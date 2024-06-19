@@ -8,8 +8,8 @@ import '../scss/Navigate.scss'
 import logo from '../../../scq.png'
 
 // Pages Import
-import ModalProfile from '../ModalProfile';
-import ModalSign from '../ModalSign';
+import ModalProfile from '../auth/ModalProfile';
+import ModalSign from '../auth/ModalSign';
 
 
 function Navigate({show, handleClose, handleShow, setToken, token}) {

@@ -1,13 +1,13 @@
 import React from 'react'
 import { Container, Row, Button } from 'react-bootstrap'
-import './scss/Homebody.scss'
+import '../scss/HomeBody.scss'
 import { useNavigate } from 'react-router-dom'
 
 // Typewriter effect
 import { useTypewriter, Cursor } from 'react-simple-typewriter'
 
 // Pictures
-import firewall from '../assets/tsv.png'
+import firewall from '../../assets/tsv.png'
 
 // Typewriter effect controller
 const HomeBody = () => {

@@ -2,7 +2,7 @@ import React, {useState} from 'react'
 import { Toast, Button, Modal, Container } from 'react-bootstrap'
 import axios from 'axios'
 import { Parser } from "html-to-react"
-import host from "./Host"
+import host from "../controller/Host"
 
 const QuestionBody = ({quest, objektivitas, point, title, user_point, username, exam, task_html}) => {
     // toast controller 

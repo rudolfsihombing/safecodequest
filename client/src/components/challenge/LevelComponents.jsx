@@ -1,9 +1,9 @@
 import React, {useState, useEffect} from 'react'
 import { Carousel, Image, Button } from 'react-bootstrap'
-import './scss/LevelComponents.scss'
-import jefferson from '../assets/onlinesecurity.jpg'
+import '../scss/LevelComponents.scss'
+import jefferson from '../../assets/onlinesecurity.jpg'
 import { Link } from 'react-router-dom';
-import host from "./Host"
+import host from "../controller/Host"
 
 const LevelComponents = ({token, handleShow, notify, exam}) => { 
 

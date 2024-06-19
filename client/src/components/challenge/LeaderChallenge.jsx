@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react'
 import axios from 'axios'
-import host from './Host'
+import host from '../controller/Host'
 
 const LeaderChallenge = () => {
     // leader fetch

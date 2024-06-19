@@ -1,10 +1,10 @@
 import React, {useState, useEffect, useRef} from 'react'
 import { Row, Col, Container, Nav, Button } from 'react-bootstrap'
-import './scss/ExamBody.scss'
+import '../scss/ExamBody.scss'
 import axios from 'axios'
 import { useParams, useNavigate } from 'react-router-dom'
 import Swal from 'sweetalert2';
-import host from "./Host"
+import host from "../controller/Host"
 
 // Editor
 import Editor from "@monaco-editor/react"

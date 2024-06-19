@@ -2,7 +2,7 @@ import React from 'react'
 import { Col } from 'react-bootstrap'
 
 // assets
-import CirUser from '../assets/user.svg'
+import CirUser from '../../assets/user.svg'
 
 const Cardleader = ({user, rank, points}) => {
     return (

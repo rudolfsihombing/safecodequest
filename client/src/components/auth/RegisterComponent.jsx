@@ -4,14 +4,14 @@ import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
 import { useFormik } from 'formik'
-import host from "./Host"
+import host from "../controller/Host"
 
 const RegisterComponent = ({handleClose}) => {
     // Formik handler
     const initialValues = {
-        nama: '',
-        username: '',
-        password: '',
+        nama: null,
+        username: null,
+        password: null,
     }
     
     const onSubmit = values => {
@@ -51,33 +51,34 @@ const RegisterComponent = ({handleClose}) => {
         const errorsNotEmpty = Object.keys(formik.errors).length > 0;
 
         if (!errorsNotEmpty) {
-            axios({
-                method: "POST",
-                url: `http://${host}/signup`,
-                data: {
-                    nama: formik.values.nama,
-                    username: formik.values.username,
-                    password: formik.values.password,
-                }
-            })
-            .then(() => {
-                Swal.fire({
-                    title: "Success",
-                    text: "Kamu telah Terdaftar",
-                    icon: "success"
-                }).then(() => {
-                    navigate("/challenge")
-                    handleClose() 
+                axios({
+                    method: "POST",
+                    url: `http://${host}/signup`,
+                    data: {
+                        nama: formik.values.nama,
+                        username: formik.values.username,
+                        password: formik.values.password,
+                    }
                 })
-            }).catch((error) => {
-                if (error.response) {
-                    alert("Invalid Credentials")
-                    console.log(error.response)
-                    console.log(error.response.status)
-                    console.log(error.response.headers)
-                }
-            })
-            event.preventDefault()
+                .then(() => {
+                        Swal.fire({
+                            title: "Success",
+                            text: "Kamu telah Terdaftar",
+                            icon: "success"
+                        }).then(() => {
+                            navigate("/challenge")
+                            handleClose() 
+                        })
+                }).catch((error) => {
+                    if (error.response) {
+                        Swal.fire({
+                            title: "Failure",
+                            text: "Username telah terdaftar",
+                            icon: "warning"
+                        })
+                    }
+                })
+                event.preventDefault()   
         } else {
             Swal.fire({
                 title: "Failure",

@@ -1,10 +1,10 @@
 import React, {useState, useEffect} from 'react'
 import {Col, Modal, Card, Button, Row} from 'react-bootstrap'
-import User from "../assets/user.svg"
+import User from "../../assets/user.svg"
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
 import Swal from 'sweetalert2';
-import host from './Host'
+import host from '../controller/Host'
 
 const ModalProfile = ({profile, closeProfile, token, setToken}) => {
     // Profile Data Handler
@@ -54,6 +54,7 @@ const ModalProfile = ({profile, closeProfile, token, setToken}) => {
         }).then(() => {
             localStorage.removeItem("username")
             localStorage.removeItem("token")
+            localStorage.removeItem("Role")
             Swal.fire({
                 title: "Success",
                 text: "Kamu telah Logout",

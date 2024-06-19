@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { Modal } from 'react-bootstrap';
-import './scss/ModalSign.scss'
+import '../scss/ModalSign.scss'
 import FormComponent from './FormComponent';
 
 const ModalSign = ({show, handleClose, setToken}) => {

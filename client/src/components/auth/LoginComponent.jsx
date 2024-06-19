@@ -3,7 +3,7 @@ import { Button, Form } from 'react-bootstrap';
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
-import host from "./Host"
+import host from "../controller/Host"
 
 const LoginComponent = (props) => {
     // Navigate
@@ -32,7 +32,13 @@ const LoginComponent = (props) => {
                 text: "Kamu telah melakukan Login",
                 icon: "success"
             }).then(() => {
-                navigate("/challenge")
+                if (response.data.role == "Admin") {
+                    navigate("/admin")
+                    localStorage.setItem('Role', response.data.role)
+                } else {
+                    navigate("/challenge")
+                    localStorage.setItem('Role', response.data.role)
+                }
                 props.handleClose()
             })
         }).catch((error) => {

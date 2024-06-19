@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import {Container, Row} from 'react-bootstrap'
-import Cardleader from '../components/Cardleader'
-import UserLeader from '../components/UserLeader'
+import Cardleader from './Cardleader.jsx'
+import UserLeader from './UserLeader.jsx'
 import axios from 'axios'
-import host from "./Host"
+import host from "../controller/Host.jsx"
 
 const LeaderboardBody = () => {
   const [leaderboard, setLeaderboard] = useState(null)
