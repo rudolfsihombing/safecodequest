@@ -8,6 +8,8 @@ class User(db.Model):
     username = db.Column(db.String(60), index=True, unique=True, nullable=False)
     password = db.Column(db.String(250), nullable=False)
     user_point = db.Column(db.Integer, default=0)
+    avatar = db.Column(db.Integer, default=0)
+    role = db.Column(db.String(250), nullable=False, default="User")
     created_at = db.Column(db.DateTime, default=datetime.utcnow)
     updated_at = db.Column(db.DateTime, default=datetime.utcnow)
     

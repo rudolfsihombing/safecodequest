@@ -19,3 +19,14 @@ class Challenge(db.Model):
 
     def __repr__(self):
         return '<Challenge {}>'.format(self.name)
+    
+    def __init__(self, title, quest, objektifitas, challenge_point, answer, kode_quest, kode_type, task_html, caption):
+        self.title = title
+        self.quest = quest
+        self.objektifitas = objektifitas
+        self.challenge_point = challenge_point
+        self.answer = answer
+        self.kode_quest = kode_quest
+        self.kode_type = kode_type
+        self.task_html = task_html
+        self.caption = caption

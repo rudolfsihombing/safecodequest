@@ -7,6 +7,7 @@ from app.controller import ChallengeController
 from app.controller import LeaderboardController
 from app.controller import CompletionsController
 from app.controller import AiController
+from app.controller import AdminController
 
 # Flask neccessary
 from flask_jwt_extended import get_jwt_identity, unset_jwt_cookies, get_jwt
@@ -72,3 +73,35 @@ def checkGPT():
 @app.route("/helpgpt", methods=["POST"])
 def helpGPT():
     return AiController.help_endpoint()
+
+@app.route("/usermanager", methods=["GET"])
+def userManager():
+    return AdminController.index()
+
+@app.route("/updateUser/<id>", methods=["POST"])
+def updateUser(id):
+    return AdminController.update(id)
+
+@app.route("/deleteUser/<id>", methods=["POST"])
+def deleteUser(id):
+    return AdminController.delete(id)
+
+@app.route("/adminCreate", methods=["POST"])
+def adminCreate():
+    return AdminController.create()
+
+@app.route("/adminChallenge", methods=["GET"])
+def adminChallenge():
+    return AdminController.indexChallenge()
+
+@app.route("/updateChallenge/<id>", methods=["POST"])
+def updateChallenge(id):
+    return AdminController.updatechallenge(id)
+
+@app.route("/addChallenge", methods=["POST"])
+def addChallenge():
+    return AdminController.addChallenge()
+
+@app.route("/deleteChallenge/<id>", methods=["POST"])
+def deleteChallenge(id):
+    return AdminController.deleteChallenge(id)

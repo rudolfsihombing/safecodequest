@@ -52,7 +52,7 @@ def login():
         password = request.json.get('password')
 
         user = User.query.filter_by(username=username).first()
-        
+
         if not user:
             return response.badRequest([], 'Username tidak terdaftar')
         
@@ -65,10 +65,13 @@ def login():
         access_token = create_access_token(identity=username, fresh=True, expires_delta=expires)
         refresh_token = create_refresh_token(identity=username, expires_delta=expires_refresh)
 
+        role = user.role
+
         return jsonify({
             "access_token" : access_token,
             "refresh_token" : refresh_token,
-            "username" : username
+            "username" : username,
+            "role": role
         })
 
     except Exception as e:
@@ -91,3 +94,4 @@ def userupdate(username):
         return response.success('', 'Sukses menambahkan point')
     except Exception as e:
         print(e)
+

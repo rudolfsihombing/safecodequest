@@ -14,7 +14,3 @@ jwt = JWTManager(app)
     
 from app.model import user, challenge, completions
 from app import routes
-
-if __name__ == '__main__':
-    # Mengatur host menjadi '0.0.0.0' dan port menjadi 5000
-    app.run(host='0.0.0.0', port=5000)
