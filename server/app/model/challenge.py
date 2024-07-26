@@ -11,6 +11,7 @@ class Challenge(db.Model):
     answer = db.Column(db.String(10000000), nullable=False)
     kode_quest = db.Column(db.String(10000000), nullable=False)
     kode_type = db.Column(db.String(250), nullable=False)
+    tujuan = db.Column(db.String(10000000), nullable=False)
 
     completions = db.relationship('Completions', backref='challenge', lazy=True)
 
@@ -20,7 +21,7 @@ class Challenge(db.Model):
     def __repr__(self):
         return '<Challenge {}>'.format(self.name)
     
-    def __init__(self, title, quest, objektifitas, challenge_point, answer, kode_quest, kode_type, task_html, caption):
+    def __init__(self, title, quest, objektifitas, challenge_point, answer, kode_quest, kode_type, task_html, caption, tujuan):
         self.title = title
         self.quest = quest
         self.objektifitas = objektifitas
@@ -30,3 +31,4 @@ class Challenge(db.Model):
         self.kode_type = kode_type
         self.task_html = task_html
         self.caption = caption
+        self.tujuan = tujuan

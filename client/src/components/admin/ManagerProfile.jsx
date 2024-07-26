@@ -99,43 +99,45 @@ const ManagerProfile = () => {
 
   // Delete User
   const handleDelete = (user) => {
-    axios({
-      method: "POST",
-      url: `http://localhost:5000/deleteUser/${user.id}`,
-    }).then(() => {
-      Swal.fire({
-        title: "Peringatan",
-        icon: "warning",
-        text: "Kamu tidak akan dapat memulihkan user yang telah dihapus!",
-        showCancelButton: true,
-        confirmButtonColor: "#3085d6",
-        cancelButtonColor: "#d33",
-        confirmButtonText: "Ya, hapus!"
-      }).then((result) => {
-        if (result.isConfirmed) {
-          Swal.fire({
-            title: "Deleted!",
-            text: "User berhasil di delete.",
-            icon: "success"
-          })
-          
+    Swal.fire({
+      title: "Peringatan",
+      icon: "warning",
+      text: "Anda yakin untuk menghapus?",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Ya, hapus!"
+    }).then((result) => {
+      if (result.isConfirmed) {
+        Swal.fire({
+          title: "Deleted!",
+          text: "User berhasil di delete.",
+          icon: "success"
+        }).then(() => {
           axios({
-            method: "GET",
-            url: `http://${host}/usermanager`,
+            method: "POST",
+            url: `http://${host}/deleteUser/${user.id}`
+          }).then(() => {     
+            axios({
+              method: "GET",
+              url: `http://${host}/usermanager`,
+            })
+            .then((response) => {
+              const res = response.data.data;
+              setUserprofile(res);
+            }).catch((error) => {
+              if (error.response) {
+                console.log(error.response);
+                console.log(error.response.status);
+                console.log(error.response.header);
+              }
+            });
           })
-          .then((response) => {
-            const res = response.data.data;
-            setUserprofile(res);
-          }).catch((error) => {
-            if (error.response) {
-              console.log(error.response);
-              console.log(error.response.status);
-              console.log(error.response.header);
-            }
-          });
-        }
-      })
+        })
+
+      }
     })
+
   }
 
   // Button Reset

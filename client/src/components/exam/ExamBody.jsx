@@ -44,7 +44,8 @@ const ExamBody = ({token}) => {
                 exam_answer : res.answer,
                 exam_kode_quest : res.kode_quest,
                 exam_kode_type : res.kode_type,
-                exam_task_html : res.task_html
+                exam_task_html : res.task_html,
+                exam_tujuan : res.tujuan,
             }))
             console.log(res)
         }).catch((error) => {
@@ -185,7 +186,8 @@ const ExamBody = ({token}) => {
                         Swal.fire({
                             title: "Nice Job",
                             text: `Anda mendapatkan ${exam?.exam_point} poin`,
-                            icon: 'success'
+                            icon: 'success',
+                            footer: `${exam?.exam_tujuan}`
                         }).then((result) => {
                             if (result.isConfirmed) {
                                 addPoint()

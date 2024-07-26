@@ -27,7 +27,8 @@ def getexam(getexamid):
             "answer" : challenge.answer,
             "kode_quest": challenge.kode_quest,
             "kode_type": challenge.kode_type,
-            "task_html" : challenge.task_html
+            "task_html" : challenge.task_html,
+            "tujuan": challenge.tujuan
         }
 
         return response_body
